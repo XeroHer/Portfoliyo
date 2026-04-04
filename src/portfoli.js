@@ -21,7 +21,7 @@ import DNN from "./deep learning.png"
 import Vision from "./web-eye-svgrepo-com.png"
 import dyanjo from "./file_type_django_icon_130645.png"
 import nextjs from "./next-js.png";
-import cv from "./BIKESHCS.pdf";
+import cv from "./BIKESHCS.pdf"
 
 // FontAwesome React imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
