@@ -12,6 +12,16 @@ import typescript from "./TypeScript.png";
 import Sql from "./SQL.png";
 import taiwind from "./tailwind.png";
 import freeCode from "./4691243_freecodecamp_icon.png"
+import blockchain from "./bitcoin-logo_svgstack_com_6951775237867.png"
+import smartContract from "./smart-contract.png"
+import SpringBoot from "./spring-boot-icon.png"
+import OpenCV from "./opencv.png"
+import MachineLearning from "./machine learning.png"
+import DNN from "./deep learning.png"
+import Vision from "./web-eye-svgrepo-com.png"
+import dyanjo from "./file_type_django_icon_130645.png"
+import nextjs from "./next-js.png";
+import cv from "./BIKESHCS.pdf";
 
 // FontAwesome React imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,7 +44,7 @@ import {
 
 import {
   faDownload,
-  faHandPaper,   // Changed from faHandWave
+    // Changed from faHandWave
   faDesktop,
   faPhoneAlt,     // Added for footer phone icon
   faEnvelope,     // Added for footer email icon
@@ -49,24 +59,31 @@ const skills = [
   { id: 6, icon: faPhp, label: "PHP",  bg: "#777bb3", color: "white" },
   { id: 7, icon: faHtml5, label: "HTML5", bg: "#e34f26", color: "white" },
   { id: 8, icon: faCss3, label: "CSS3", bg: "#2965f1", color: "white" },
- 
+  { id: 9, imgSrc: taiwind, label: "Tailwind CSS", bg: "#38b2ac" },
   { id: 10, icon: faFigma, label: "Figma",  bg: "#f24e1e" },
- 
+  { id: 11, imgSrc: mongodb, label: "MongoDB", bg: "#47a248" },
   { id: 12, icon: faWordpress, label: "WordPress",  bg: "#21759b", color: "white" },
   { id: 13, icon: faBootstrap, label: "Bootstrap", bg: "#563d7c", color: "white" },
-   { id: 9, imgSrc: taiwind, label: "Tailwind CSS", bg: "#38b2ac" },
-    { id: 11, imgSrc: mongodb, label: "MongoDB", bg: "#47a248" },
-
-    
-  { id: 14, type: "img", imgSrc: C_Sharp, label: "C#", bg: "#68217A", color: "white" },
+  { id: 14, imgSrc: C_Sharp, label: "C#", bg: "#68217A", color: "white" },
   { id: 15, imgSrc: CP, label: "C", bg: "#A8B9CC", color: "black" },
   { id: 16, imgSrc: C_pluss, label: "C++", bg: "#00599C", color: "white" },
   { id: 17, imgSrc: javaFx, label: "JavaFX", bg: "#5382A1", color: "white" },
   { id: 18, imgSrc: docker, label: "Docker", bg: "#0db7ed", color: "white" },
   { id: 19, imgSrc: Sql, label: "SQL", bg: "#4479A1", color: "white" },
   { id: 20, imgSrc: typescript, label: "TypeScript", bg: "#3178C6", color: "white" },
-];
 
+  // New skills with icons/images
+  { id: 21, label: "Formal Methods", bg: "#ff6f61", color: "white" }, // text badge
+  { id: 22, imgSrc: smartContract, label: "Smart Contract", bg: "#4a90e2" },
+  { id: 23, imgSrc: blockchain, label: "Blockchain", bg: "#f7931a" },
+  { id: 24, imgSrc: SpringBoot, label: "Spring Boot", bg: "#6db33f" },
+  { id: 25, imgSrc: MachineLearning, label: "Machine Learning", bg: "#f9a825", color: "black" },
+  { id: 26, imgSrc: DNN, label: "Deep NN", bg: "#9c27b0", color: "white" },
+  { id: 27, imgSrc: OpenCV, label: "OpenCV", bg: "#5c5c5c", color: "white" },
+  { id: 28, imgSrc: Vision, label: "Computer Vision", bg: "#00bcd4", color: "white" },
+  { id: 29, imgSrc: dyanjo, label: "Django", bg: "#092e20", color: "white" },
+  { id: 30, imgSrc: nextjs, label: "Next.js", bg: "#000000", color: "white" },
+];
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [rotatingTextVisible, setRotatingTextVisible] = useState(true);
@@ -86,6 +103,16 @@ const Portfolio = () => {
     }
   }, [darkMode]);
 
+ const [showBackToTop, setShowBackToTop] = useState(false);
+
+// Back to Top scroll detection
+  useEffect(() => {
+    const handleScroll = () => setShowBackToTop(window.scrollY > 300);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
   return (
     <>
       <nav className="navbar">
@@ -99,7 +126,7 @@ const Portfolio = () => {
           <li><a href="#experience">Experience</a></li>
           <li>
             <a
-              href="https://drive.google.com/file/d/1xZLsr2kfuOWklWBFR5QRiIVnMxxxsS1H/view?usp=sharing"
+              href={cv}
               target="_blank"
               rel="noreferrer"
               style={{ color: "yellow" }}
@@ -168,8 +195,8 @@ const Portfolio = () => {
             <div className="bottom-section">
               <h1>Hi :)</h1>
               <p>
-                <FontAwesomeIcon icon={faHandPaper} /> 👋 I'm Bikesh Kumar Raut. I have over 5 months of experience working with <strong>Dockland Creative Organization</strong> in web development.
-                Currently, I am a full-time student, building E-commerce Websites and Online Appointment & Booking Systems. I'm deeply passionate about smart work that helps automate manual tasks.
+                👋 I'm Bikesh Kumar Raut. I have over 5 months of experience working with <strong>Dockland Creative Organization</strong> in web development.
+                Currently, I am a looking for fulltime job, building E-commerce Websites and Online Appointment & Booking Systems also helps in AI. I'm deeply passionate about smart work that helps automate manual tasks.
               </p>
             </div>
           </div>
@@ -215,28 +242,71 @@ const Portfolio = () => {
 
 
       <section id="experience" className="section">
-        <h2 style={{ backgroundColor: "rgba(210, 164, 13, 0.263)", paddingTop: "3rem" }}>EXPERIENCE</h2>
-        <div className="experience-grid">
-          <div className="experience-card">
-            <h1>PLACEMENT</h1>
-            <h4>01/01/2025 - 01/05/2025</h4>
-            <p>Company: Dockland Creative Organization</p>
-            <p>Project: One Newham Volunteering website VCFS</p>
-            <p>
-              <a href="https://onenewham.vercel.app/" target="_blank" rel="noreferrer">
-                OneNewham
-              </a>
-            </p>
-            <br />
-            <p>
-              GitHub link for the Project:{" "}
-              <a href="https://github.com/Docklands-Creative" target="_blank" rel="noreferrer">
-                github-link
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+  <h2 style={{ backgroundColor: "rgba(210, 164, 13, 0.263)", paddingTop: "3rem" }}>
+    EXPERIENCE & PROJECTS
+  </h2>
+  <div className="experience-grid">
+    {/* Placement Card */}
+    <div className="experience-card">
+      <h1>PLACEMENT</h1>
+      <h4>01/01/2025 - 01/05/2025</h4>
+      <p>Company: Dockland Creative Organization</p>
+      <p>Project: One Newham Volunteering website VCFS</p>
+      <p>
+        <a href="https://onenewham.vercel.app/" target="_blank" rel="noreferrer">
+          OneNewham
+        </a>
+      </p>
+      <p>
+        GitHub link for the Project:{" "}
+        <a href="https://github.com/Docklands-Creative" target="_blank" rel="noreferrer">
+          github-link
+        </a>
+      </p>
+    </div>
+
+    {/* AI Job Portal Project */}
+    <div className="experience-card">
+      <h1>AI-Powered Job Portal</h1>
+      <h4>2026</h4>
+      <p>
+        A full-stack web application leveraging AI to match job seekers with the right jobs
+        and provide recruiters an intuitive dashboard.
+      </p>
+      <ul>
+        <li>Users can create profiles & upload resumes</li>
+        <li>AI recommends jobs based on skills</li>
+        <li>Recruiter dashboard to post jobs</li>
+        <li>Resume Analyzer provides AI-generated feedback</li>
+      </ul>
+      <p>
+        <strong>Live Project:</strong>{" "}
+        <a href="https://aijobportals.netlify.app/" target="_blank" rel="noreferrer">
+          aijobportals.netlify.app
+        </a>
+      </p>
+      <p>
+        <strong>Frontend GitHub:</strong>{" "}
+        <a href="https://github.com/XeroHer/AI_JOB_PORTAL" target="_blank" rel="noreferrer">
+          AI_JOB_PORTAL
+        </a>
+      </p>
+      <p>
+        <strong>Backend GitHub:</strong>{" "}
+        <a href="https://github.com/XeroHer/AIJobBackend" target="_blank" rel="noreferrer">
+          AIJobBackend
+        </a>
+      </p>
+      <p>
+        <strong>Backend API:</strong>{" "}
+        <a href="https://aijobbackend.onrender.com/" target="_blank" rel="noreferrer">
+          aijobbackend.onrender.com
+        </a>
+      </p>
+      <h4 >AI--Live Soon!</h4>
+    </div>
+  </div>
+</section>
 
       <footer id="footer">
         <div className="footer-content">
@@ -283,6 +353,15 @@ const Portfolio = () => {
           </div>
         </div>
       </footer>
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <button
+          className="back-to-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          ↑ Back to Top
+        </button>
+      )}
     </>
   );
 };

@@ -356,3 +356,23 @@ body.dark-mode .social-icon {
 body.dark-mode .social-icon:hover {
   color: #00bcd4;
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f5a623;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: #d48806;
+}
