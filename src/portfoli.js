@@ -171,7 +171,7 @@ const Portfolio = () => {
           <div className="about-image">
             <img
               src={profile}
-              alt="Bikesh Kumar Raut - Profile Image"
+              alt="Bikesh Kumar Raut - ProfileImage"
             />
             <div className="Icon">
               <a href="https://www.python.org" target="_blank" rel="noreferrer">
