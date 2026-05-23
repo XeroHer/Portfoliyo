@@ -305,6 +305,134 @@ const Portfolio = () => {
       </p>
       <h4 >AI--Live Soon!</h4>
     </div>
+    {/* Maithili Shark Project */}
+<div className="experience-card">
+  <h1>Maithili Shark (Web3 + Traditional Payments)</h1>
+  <h4>2026</h4>
+
+  <p>
+    A full-stack e-commerce platform integrating both blockchain-based and
+    traditional payment systems, designed to provide secure, flexible, and
+    seamless shopping experiences.
+  </p>
+
+  <ul>
+    <li>
+      Designed a full-stack e-commerce platform with 10+ core features,
+      including product uploads, cart management, secure checkout, and order
+      tracking
+    </li>
+
+    <li>
+      Implemented role-based access for customers and vendors, enabling smooth
+      multi-user interactions
+    </li>
+
+    <li>
+      Built a responsive cart and product management system with full CRUD
+      operations, optimizing UI performance and state management
+    </li>
+
+    <li>
+      Integrated blockchain payments using smart contracts with MetaMask and
+      traditional payment processing via Stripe
+    </li>
+
+    <li>
+      Enhanced transaction security and flexibility through decentralized and
+      centralized payment support
+    </li>
+  </ul>
+
+  <p>
+    <strong>Live Project:</strong>{" "}
+    <a
+      href="https://maithiliyshark.netlify.app/"
+      target="_blank"
+      rel="noreferrer"
+    >
+      maithiliyshark.netlify.app
+    </a>
+  </p>
+
+  <p>
+    <strong>GitHub:</strong>{" "}
+    <a
+      href="https://github.com/XeroHer/Vendor"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Vendor
+    </a>
+  </p>
+
+  <h4>Live Now!</h4>
+</div>
+{/* Resume Analyzer AI Project */}
+<div className="experience-card">
+  <h1>AI Resume Analyzer</h1>
+  <h4>2026</h4>
+
+  <p>
+    An AI-powered resume analysis application that evaluates resumes using
+    Natural Language Processing (NLP) and Machine Learning to improve hiring
+    outcomes and ATS compatibility.
+  </p>
+
+  <ul>
+    <li>ATS (Applicant Tracking System) score analysis</li>
+    <li>Skill extraction from uploaded resumes</li>
+    <li>Job-role matching based on resume content</li>
+    <li>AI-generated resume improvement suggestions</li>
+    <li>Keyword optimization for better ATS visibility</li>
+  </ul>
+
+  <p>
+    <strong>Live Project:</strong>{" "}
+    <a
+      href="https://aijobportals.netlify.app/"
+      target="_blank"
+      rel="noreferrer"
+    >
+      aijobportals.netlify.app
+    </a>
+  </p>
+
+  <h4>AI-Powered Resume Analysis</h4>
+</div>
+
+{/* Object Detection Using YOLOv8 */}
+<div className="experience-card">
+  <h1>Object Detection Using YOLOv8 (KITTI Dataset)</h1>
+  <h4>Academic AI Project • 2026</h4>
+
+  <p>
+    An academic AI project focused on training the YOLOv8 model using the
+    KITTI Vision Benchmark Suite dataset for autonomous driving and real-time
+    road-scene object detection.
+  </p>
+
+  <ul>
+    <li>Trained YOLOv8 model using the KITTI dataset</li>
+    <li>Real-time detection of cars, pedestrians, and cyclists</li>
+    <li>Applied computer vision techniques for autonomous driving research</li>
+    <li>Optimized object detection for road-scene image processing</li>
+  </ul>
+
+  <p>
+    <strong>GitHub:</strong>{" "}
+    <a
+      href="https://github.com/XeroHer/ObjectDetection"
+      target="_blank"
+      rel="noreferrer"
+    >
+      ObjectDetection
+    </a>
+  </p>
+
+  <h4>Computer Vision & Deep Learning</h4>
+</div>
+
   </div>
 </section>
 
