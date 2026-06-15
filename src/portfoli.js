@@ -1,5 +1,6 @@
 // Portfolio.jsx
 import React, { useState, useEffect } from "react";
+
 import "./App.css";
 import profile from "./IMG_0420.jpg";
 import mongodb from "./4691284_mongodb_icon.png"
@@ -21,7 +22,7 @@ import DNN from "./deep learning.png"
 import Vision from "./web-eye-svgrepo-com.png"
 import dyanjo from "./file_type_django_icon_130645.png"
 import nextjs from "./next-js.png";
-import cv from "./BIKESHCS.pdf"
+import cv from "./CVCS2.11A.pdf"
 
 // FontAwesome React imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -49,6 +50,7 @@ import {
   faPhoneAlt,     // Added for footer phone icon
   faEnvelope,     // Added for footer email icon
 } from "@fortawesome/free-solid-svg-icons";
+import Certificates from "./certificate";
 
 const skills = [
   { id: 1, icon: faPython, label: "Python",  bg: "#306998", color: "white" },
@@ -195,8 +197,9 @@ const Portfolio = () => {
             <div className="bottom-section">
               <h1>Hi :)</h1>
               <p>
-                👋 I'm Bikesh Kumar Raut. I have over 5 months of experience working with <strong>Dockland Creative Organization</strong> in web development.
-                Currently, I am a looking for fulltime job, building E-commerce Websites and Online Appointment & Booking Systems also helps in AI. I'm deeply passionate about smart work that helps automate manual tasks.
+                👋I'm <strong>Bikesh Kumar Raut</strong>, a <strong>Full Stack Developer</strong> and <strong>Computer Science graduate</strong> from the <strong>University of East London</strong>. I have experience developing <strong>responsive web applications</strong> at <strong>Docklands Creative Organization</strong> using <strong>React</strong>, <strong>TypeScript</strong>, and modern web technologies.
+
+I enjoy building <strong>full-stack</strong>, <strong>AI-powered</strong>, and <strong>blockchain-based applications</strong> that solve real-world problems. My projects include an <strong>AI Job Portal</strong>, a <strong>Web3 e-commerce platform</strong>, and an <strong>YOLOv8 object detection system</strong>. I'm passionate about <strong>learning new technologies</strong>, <strong>automating processes</strong>, and building solutions that create real impact.
               </p>
             </div>
           </div>
@@ -242,7 +245,7 @@ const Portfolio = () => {
 
 
       <section id="experience" className="section">
-  <h2 style={{ backgroundColor: "rgba(210, 164, 13, 0.263)", paddingTop: "3rem" }}>
+  <h2 style={{ backgroundColor: "rgba(210, 164, 13, 0.263)", paddingTop: "2rem" }}>
     EXPERIENCE & PROJECTS
   </h2>
   <div className="experience-grid">
@@ -303,7 +306,7 @@ const Portfolio = () => {
           aijobbackend.onrender.com
         </a>
       </p>
-      <h4 >AI--Live Soon!</h4>
+      
     </div>
     {/* Maithili Shark Project */}
 <div className="experience-card">
@@ -435,6 +438,24 @@ const Portfolio = () => {
 
   </div>
 </section>
+ <h1
+  
+  style={{
+    display: "block",
+    textAlign: "center",
+    backgroundColor: "#ffc107",
+    color: "#0c0c0c",
+    padding: "10px 20px",
+    borderRadius: "8px",
+    fontWeight: "bold",
+    textDecoration: "none",
+    width: "95%",
+    margin: "20px auto"
+  }}
+>
+  Certificates
+</h1>
+<Certificates darkMode={darkMode}/>
 
       <footer id="footer">
         <div className="footer-content">
@@ -475,7 +496,7 @@ const Portfolio = () => {
               </a>
             </div>
           </div>
-
+         
           <div className="footer-item">
             <p>Copyright &copy; 2025 Bikesh Kumar Raut</p>
           </div>

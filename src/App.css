@@ -155,12 +155,13 @@ input:checked + .slider {
 }
 
 .about-text {
-  margin-top: 10.66rem;
-  max-width: 600px;
+  margin-top: 7.5rem;
+  max-width: 800px;
   text-align: left;
   background: #f1f1f1;
   padding: 2rem;
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(108, 106, 106, 1);
 }
 
 .dark-mode .about-text {
@@ -192,8 +193,8 @@ input:checked + .slider {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
-    grid-auto-rows: 150px; /* uniform row height */
-  margin-top: 2rem;
+  grid-auto-rows: 150px; /* uniform row height */
+  margin-top: 0rem;
   padding: 10rem;
 }
 @media (max-width: 900px) {
@@ -213,6 +214,7 @@ input:checked + .slider {
   color: white;
   text-align: center;
   transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(108, 106, 106, 1);
 }
 
 .skill-item:hover {
