@@ -130,14 +130,16 @@ const Portfolio = () => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTitleIndex(
-        (prev) => (prev + 1) % jobTitles.length
-      );
-    }, 3000);
+  if (!jobTitles.length) return;
 
-    return () => clearInterval(interval);
-  }, []);
+  const interval = setInterval(() => {
+    setCurrentTitleIndex(
+      (prev) => (prev + 1) % jobTitles.length
+    );
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, [jobTitles]);
 
   useEffect(() => {
     if (darkMode) {
