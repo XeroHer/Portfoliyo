@@ -530,3 +530,156 @@ input:checked + .slider {
     padding: 12px;
   }
 }
+.orbit-container {
+  position: relative;
+  width: clamp(240px, 60vw, 450px);
+  height: clamp(240px, 60vw, 450px);
+  margin: -130px auto;
+    /* 👇 shared orbit radius */
+  --orbit-radius: calc(0.22 * 100%);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .orbit-container {
+    width: 320px;
+    height: 320px;
+    margin: -80px auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .orbit-container {
+    width: 240px;
+    height: 240px;
+    margin: -50px auto;
+  }
+}
+
+.orbit-ring {
+  position: absolute;
+  width: 185px;
+  height: 185px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(147, 37, 37, 0.501);
+  border-radius: 50%;
+  animation: spin 12s linear infinite;
+}
+
+/* Scale ring on smaller screens */
+@media (max-width: 768px) {
+  .orbit-ring {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .orbit-ring {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+.orbit-dot {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: #b56cff;
+  box-shadow: 0 0 20px #b56cff;
+}
+
+/* Smaller dot on mobile */
+@media (max-width: 480px) {
+  .orbit-dot {
+    width: 12px;
+    height: 12px;
+    top: -7px;
+  }
+}
+
+.profile-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Scale profile image */
+@media (max-width: 768px) {
+  .profile-center {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-center {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+.profile-center img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.orbit-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  white-space: nowrap;
+  animation: orbitText 8s linear infinite;
+}
+
+/* Light mode */
+body:not(.dark-mode) .orbit-text {
+  color: black;
+}
+
+/* Reduce text size on mobile */
+@media (max-width: 480px) {
+  .orbit-text {
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes orbitText {
+  from {
+    transform: rotate(0deg)
+      translateX(var(--orbit-radius))
+      rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg)
+      translateX(var(--orbit-radius))
+      rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

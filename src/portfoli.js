@@ -117,13 +117,25 @@ const skills = [
 ];
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(false);
-  const [rotatingTextVisible, setRotatingTextVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(true);
+
+  const jobTitles = [
+    "Full Stack Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "Software Engineer",
+    "AI Developer"
+  ];
+
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRotatingTextVisible((prev) => !prev);
-    }, 5000);
+      setCurrentTitleIndex(
+        (prev) => (prev + 1) % jobTitles.length
+      );
+    }, 3000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -137,13 +149,13 @@ const Portfolio = () => {
 
   const [showBackToTop, setShowBackToTop] = useState(false);
 
-  // Back to Top scroll detection
   useEffect(() => {
     const handleScroll = () => setShowBackToTop(window.scrollY > 300);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  
   return (
     <>
       <nav className="navbar">
@@ -193,11 +205,21 @@ const Portfolio = () => {
           <p>Discover my work, skills, and experience in the world of tech</p>
           <FontAwesomeIcon icon={faDesktop} className="fa-desktop" />
           <h1>Bikesh Kumar Raut</h1>
-          <div className="Developer">
-            {rotatingTextVisible && (
-              <p id="rotatingText">FullStack Developer</p>
-            )}
-          </div>
+           <div className="portfolio">
+      <div className="orbit-container">
+        <div className="orbit-ring">
+          <div className="orbit-dot"></div>
+        </div>
+
+        <div className="profile-center">
+          <img src={profile} alt="Profile" />
+        </div>
+
+        <p className="orbit-text">
+          {jobTitles[currentTitleIndex]}
+        </p>
+      </div>
+    </div>
 
           {/* Theme Toggle Button */}
           <div className="toggle-container">
