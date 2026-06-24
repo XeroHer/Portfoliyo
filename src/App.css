@@ -530,11 +530,17 @@ input:checked + .slider {
     padding: 12px;
   }
 }
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 .orbit-container {
   position: relative;
   width: clamp(240px, 60vw, 450px);
   height: clamp(240px, 60vw, 450px);
-  margin: -130px auto;
+  margin: 0px auto;
     /* 👇 shared orbit radius */
   --orbit-radius: calc(0.22 * 100%);
 }

@@ -115,26 +115,26 @@ const skills = [
   { id: 29, imgSrc: dyanjo, label: "Django", bg: "#092e20", color: "white" },
   { id: 30, imgSrc: nextjs, label: "Next.js", bg: "#000000", color: "white" },
 ];
- const jobTitles = [
-    "Full Stack Developer",
-    "Frontend Developer",
-    "Backend Developer",
-    "Software Engineer",
-    "AI Developer"
-  ];
+const jobTitles = [
+  "Full Stack Developer",
+  "Frontend Developer",
+  "Backend Developer",
+  "Software Engineer",
+  "AI Developer",
+];
 
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentTitleIndex((prev) => (prev + 1) % jobTitles.length);
-  }, 2000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitleIndex((prev) => (prev + 1) % jobTitles.length);
+    }, 2000);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (darkMode) {
@@ -152,7 +152,6 @@ useEffect(() => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  
   return (
     <>
       <nav className="navbar">
@@ -202,21 +201,23 @@ useEffect(() => {
           <p>Discover my work, skills, and experience in the world of tech</p>
           <FontAwesomeIcon icon={faDesktop} className="fa-desktop" />
           <h1>Bikesh Kumar Raut</h1>
-           <div className="portfolio">
-      <div className="orbit-container">
-        <div className="orbit-ring">
-          <div className="orbit-dot"></div>
-        </div>
+          <div className="portfolio">
+  <div className="orbit-container">
 
-        <div className="profile-center">
-          <img src={profile} alt="Profile" />
-        </div>
-
-        <p className="orbit-text">
-          {jobTitles[currentTitleIndex]}
-        </p>
-      </div>
+    <div className="orbit-ring">
+      <div className="orbit-dot"></div>
     </div>
+
+    <div className="profile-center">
+      <img src={profile} alt="Profile" />
+    </div>
+
+    <div className="orbit-text">
+      {jobTitles[currentTitleIndex]}
+    </div>
+
+  </div>
+</div>
 
           {/* Theme Toggle Button */}
           <div className="toggle-container">
@@ -335,56 +336,57 @@ useEffect(() => {
           EXPERIENCE & PROJECTS
         </h2>
         <div className="experience-grid">
-         {/* Internship Card */}
-  <div className="experience-card">
-    <h1>INTERNSHIP</h1>
+          {/* Internship Card */}
+          <div className="experience-card">
+            <h1>INTERNSHIP</h1>
 
-    <h4>01/01/2025 - 30/05/2025</h4>
+            <h4>01/01/2025 - 30/05/2025</h4>
 
-    <h3>Position: Full Stack Developer</h3>
+            <h3>Position: Full Stack Developer</h3>
 
-    <p>Company: Docklands Creative Organization</p>
+            <p>Company: Docklands Creative Organization</p>
 
-    <p>Project: One Newham Volunteering Website (VCFS)</p>
+            <p>Project: One Newham Volunteering Website (VCFS)</p>
 
-    {/* Project Description */}
-    <p>
-      A full-stack volunteering platform for the Newham VCFS community designed to
-      connect residents with local opportunities. Improved UI/UX for 500+ monthly
-      users, developed responsive pages from Figma designs, and integrated backend
-      functionality using SQL within an Agile team environment.
-    </p>
+            {/* Project Description */}
+            <p>
+              A full-stack volunteering platform for the Newham VCFS community
+              designed to connect residents with local opportunities. Improved
+              UI/UX for 500+ monthly users, developed responsive pages from
+              Figma designs, and integrated backend functionality using SQL
+              within an Agile team environment.
+            </p>
 
-    <p>
-      <a
-        href="https://onenewham.vercel.app/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Live Project
-      </a>
-    </p>
+            <p>
+              <a
+                href="https://onenewham.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live Project
+              </a>
+            </p>
 
-    <p>
-      <a
-        href="https://github.com/Docklands-Creative/newham-vcs"
-        target="_blank"
-        rel="noreferrer"
-      >
-        GitHub Repository
-      </a>
-    </p>
+            <p>
+              <a
+                href="https://github.com/Docklands-Creative/newham-vcs"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub Repository
+              </a>
+            </p>
 
-    <p>
-      <a
-        href="https://www.figma.com/design/q1fzwixRXnSv6c3fWTuCox/One-newham?nodeid=3502-10542&p=f&t=zmNuxLLj5H7hkM3j-0"
-        target="_blank"
-        rel="noreferrer"
-      >
-        View Figma Design
-      </a>
-    </p>
-  </div>
+            <p>
+              <a
+                href="https://www.figma.com/design/q1fzwixRXnSv6c3fWTuCox/One-newham?nodeid=3502-10542&p=f&t=zmNuxLLj5H7hkM3j-0"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Figma Design
+              </a>
+            </p>
+          </div>
 
           {/* AI Job Portal Project */}
           <div className="experience-card">
