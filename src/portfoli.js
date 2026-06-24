@@ -115,11 +115,7 @@ const skills = [
   { id: 29, imgSrc: dyanjo, label: "Django", bg: "#092e20", color: "white" },
   { id: 30, imgSrc: nextjs, label: "Next.js", bg: "#000000", color: "white" },
 ];
-const Portfolio = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(true);
-
-  const jobTitles = [
+ const jobTitles = [
     "Full Stack Developer",
     "Frontend Developer",
     "Backend Developer",
@@ -127,13 +123,14 @@ const Portfolio = () => {
     "AI Developer"
   ];
 
+const Portfolio = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(true);
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
 
- useEffect(() => {
-  const length = jobTitles.length;
-
+useEffect(() => {
   const interval = setInterval(() => {
-    setCurrentTitleIndex((prev) => (prev + 1) % length);
+    setCurrentTitleIndex((prev) => (prev + 1) % jobTitles.length);
   }, 2000);
 
   return () => clearInterval(interval);
