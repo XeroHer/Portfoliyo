@@ -540,7 +540,7 @@ input:checked + .slider {
   position: relative;
   width: clamp(240px, 60vw, 450px);
   height: clamp(240px, 60vw, 450px);
-  margin: 0px auto;
+  margin: -130px auto;
     /* 👇 shared orbit radius */
   --orbit-radius: calc(0.22 * 100%);
 }
