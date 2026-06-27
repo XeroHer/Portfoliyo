@@ -361,7 +361,14 @@ input:checked + .slider {
 .back-to-top:hover {
   background: #d48806;
 }
-
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 80px;
+    right: 15px;
+    z-index: 9999;
+    margin-bottom: 50px;
+  }
+}
 /* =========================
    ANIMATION
 ========================= */
@@ -687,5 +694,77 @@ body:not(.dark-mode) .orbit-text {
 
   to {
     transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+/* Hide on desktop */
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    height: 60px;
+    background: #292929;
+    border-top: 1px solid #333;
+
+    z-index: 1000;
+  }
+
+  .mobile-bottom-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .mobile-bottom-nav a:hover {
+    color: #ffd700;
+  }
+
+  /* Prevent content from being hidden behind the bottom nav */
+  body {
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links li:nth-child(1), /* About */
+  .nav-links li:nth-child(4), /* Experience */
+  .nav-links li:nth-child(5)  /* Certificates */
+  {
+    display: none;
+  }
+}
+
+.search-input {
+  width: 300px;
+  padding: 8px 12px;
+  border: 1px solid #555;
+  border-radius: 20px;
+  outline: none;
+  background: #222;
+  color: white;
+  margin: 0 15px;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    width: 200px;
+    font-size: 14px;
   }
 }

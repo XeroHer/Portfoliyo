@@ -127,7 +127,7 @@ const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-
+  const [search, setSearch] = useState("");
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTitleIndex((prev) => (prev + 1) % jobTitles.length);
@@ -152,6 +152,31 @@ const Portfolio = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleSearch = (e) => {
+  if (e.key !== "Enter") return;
+
+  const sections = {
+    about: "about",
+    skills: "skills",
+    projects: "experience",      // your Projects section
+    experience: "experience",
+    certificates: "certifications",
+    certification: "certifications",
+    cert: "certifications",
+  };
+
+  const key = search.toLowerCase().trim();
+  const id = sections[key];
+
+  if (id) {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+    setSearch("");
+  } else {
+    alert("Section not found!");
+  }
+};
   return (
     <>
       <nav className="navbar">
@@ -164,6 +189,15 @@ const Portfolio = () => {
           <FontAwesomeIcon icon={faGithub} />
         </a>
 
+ {/* Search */}
+  <input
+    type="text"
+    placeholder="Search..."
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    onKeyDown={handleSearch}
+    className="search-input"
+  />
         {/* Hamburger Button */}
         <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
@@ -181,6 +215,9 @@ const Portfolio = () => {
           </li>
           <li>
             <a href="#experience">Experience</a>
+          </li>
+          <li>
+            <a href="#certifications">Certificates</a>
           </li>
           <li>
             <a
@@ -202,22 +239,18 @@ const Portfolio = () => {
           <FontAwesomeIcon icon={faDesktop} className="fa-desktop" />
           <h1>Bikesh Kumar Raut</h1>
           <div className="portfolio">
-  <div className="orbit-container">
+            <div className="orbit-container">
+              <div className="orbit-ring">
+                <div className="orbit-dot"></div>
+              </div>
 
-    <div className="orbit-ring">
-      <div className="orbit-dot"></div>
-    </div>
+              <div className="profile-center">
+                <img src={profile} alt="Profile" />
+              </div>
 
-    <div className="profile-center">
-      <img src={profile} alt="Profile" />
-    </div>
-
-    <div className="orbit-text">
-      {jobTitles[currentTitleIndex]}
-    </div>
-
-  </div>
-</div>
+              <div className="orbit-text">{jobTitles[currentTitleIndex]}</div>
+            </div>
+          </div>
 
           {/* Theme Toggle Button */}
           <div className="toggle-container">
@@ -577,23 +610,25 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-      <h1
-        style={{
-          display: "block",
-          textAlign: "center",
-          backgroundColor: "#ffc107",
-          color: "#0c0c0c",
-          padding: "10px 20px",
-          borderRadius: "8px",
-          fontWeight: "bold",
-          textDecoration: "none",
-          width: "95%",
-          margin: "20px auto",
-        }}
-      >
-        Certificates
-      </h1>
-      <Certificates darkMode={darkMode} />
+      <section id="certifications">
+        <h1
+          style={{
+            display: "block",
+            textAlign: "center",
+            backgroundColor: "#ffc107",
+            color: "#0c0c0c",
+            padding: "10px 20px",
+            borderRadius: "8px",
+            fontWeight: "bold",
+            textDecoration: "none",
+            width: "95%",
+            margin: "20px auto",
+          }}
+        >
+          Certificates
+        </h1>
+        <Certificates darkMode={darkMode} />
+      </section>
 
       <footer id="footer">
         <div className="footer-content">
@@ -669,6 +704,11 @@ const Portfolio = () => {
           ↑ Back to Top
         </button>
       )}
+      <nav className="mobile-bottom-nav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certificates</a>
+      </nav>
     </>
   );
 };

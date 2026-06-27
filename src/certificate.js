@@ -108,7 +108,7 @@ export default function Certificates({ darkMode }) {
   };
 
   return (
-    <div style={styles.page}>
+    <div id="certificates" style={styles.page}>
       <h1 style={styles.heading}>My Certificates</h1>
       <p style={styles.subHeading}>
         Certifications in development, AI, and software engineering
